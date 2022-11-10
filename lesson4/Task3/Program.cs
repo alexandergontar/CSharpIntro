@@ -4,8 +4,9 @@ namespace Task3
 {
     class Program
     {
-        static int GetInputNumber()
+        static int GetInputNumber(string promptMessage)
         {
+            Console.Write(promptMessage);
             int inputNumber;
             while (!Int32.TryParse(Console.ReadLine(), out inputNumber))
             {
@@ -47,13 +48,10 @@ namespace Task3
             Console.Write("]");
         }
         static void Main(string[] args)
-        {
-            Console.Write("Введите размер создаваемого массива: ");
-            int size = GetInputNumber();
-            Console.Write("Введите минимальное значение элементов массива: ");
-            int minValue = GetInputNumber();
-            Console.Write("Введите максимальное значение элементов массива: ");
-            int maxValue = GetInputNumber();
+        {           
+            int size = GetInputNumber("Введите размер создаваемого массива: ");           
+            int minValue = GetInputNumber("Введите минимальное значение элементов массива: ");           
+            int maxValue = GetInputNumber("Введите максимальное значение элементов массива: ");
             
             int[] array = CreateArray(size, minValue, maxValue);
             DisplayArray<int>(array);
