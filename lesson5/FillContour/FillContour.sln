@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FillContour", "FillContour.csproj", "{4C27F7FD-2E44-4E79-B205-1B231BA2C18B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciDunamic", "FibonacciDunamic\FibonacciDunamic.csproj", "{CF490A45-AD5C-4675-A339-A1BA94754C81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C27F7FD-2E44-4E79-B205-1B231BA2C18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C27F7FD-2E44-4E79-B205-1B231BA2C18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C27F7FD-2E44-4E79-B205-1B231BA2C18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C27F7FD-2E44-4E79-B205-1B231BA2C18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF490A45-AD5C-4675-A339-A1BA94754C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF490A45-AD5C-4675-A339-A1BA94754C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF490A45-AD5C-4675-A339-A1BA94754C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF490A45-AD5C-4675-A339-A1BA94754C81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C711CF9-40C7-4892-82DC-1C64780AF831}
+	EndGlobalSection
+EndGlobal

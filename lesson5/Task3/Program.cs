@@ -79,7 +79,7 @@ namespace Task3
             DisplayArray<double>(array);
             Console.WriteLine("\n Отчет:");
             (double min, double max, double diff) = MinMaxDouble(array);
-            Console.Write(" Минимум = {0: 0.00}, Максимум = {1: 0.00}, Разность = {2: 0.00}", min, max, diff);
+            Console.Write(" Минимум = {0: 0.00}, Максимум = {1: 0.00}, Разность = {2: 0.00}", min, max, diff); ;
 
             Console.ReadKey();
         }
