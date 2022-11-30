@@ -58,7 +58,7 @@ namespace ModuleFinal
             return count;
         }
         /// <summary>
-        /// Заполнение массива строками длиной от 1 по 3 символа
+        /// Заполнение массива строками длиной от 1 по upperBound символа
         /// </summary>
         /// <param name="arrayIn"></param>
         /// <param name="arrayOut"></param>
@@ -80,11 +80,11 @@ namespace ModuleFinal
         static void Main(string[] args)
         {
             Console.WriteLine("Создание массива строк случайных символов.");
-            string[] inputArray = new string[15];
-            FillWordsArray(inputArray, 1, 7);
+            string[] inputArray = new string[15]; // массив на 15 строк
+            FillWordsArray(inputArray, 1, 7); // заполняем строками длиной от 1 до 7 символов
             Console.WriteLine("Исходный массив:");
             DisplayArray<string>(inputArray);
-            int outputArrayLength = CountTruncated(inputArray, 3);
+            int outputArrayLength = CountTruncated(inputArray, 3); // находим число строк не длиннее 3-х символов
             string[] outputArray = new string[outputArrayLength];
             FillModifWordsArray(inputArray, outputArray, 3);
             Console.WriteLine($"\nВыходной массив из строк не длиннее 3-х символов:");
