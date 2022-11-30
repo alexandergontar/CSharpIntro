@@ -42,8 +42,8 @@ namespace Task2
             else
             {
                 Console.Write(M + " ");
-                sum = NaturalNumbersSum(M + 1, N, sum + M);
-                return sum;
+                return NaturalNumbersSum(M + 1, N, sum + M);
+               // return sum;
             }
 
         }
