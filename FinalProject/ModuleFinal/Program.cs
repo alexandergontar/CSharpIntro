@@ -75,8 +75,7 @@ namespace ModuleFinal
                     arrayOut[j] = arrayIn[i];
                     j++;
                 }
-            }
-            //return arrayOut;
+            }            
         }
         static void Main(string[] args)
         {
