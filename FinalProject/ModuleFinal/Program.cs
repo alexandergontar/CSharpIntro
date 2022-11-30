@@ -64,7 +64,7 @@ namespace ModuleFinal
         /// <param name="arrayOut"></param>
         /// <param name="upperBound"></param>
         /// <returns></returns>
-        static void FillModifWordsArray(string[] arrayIn, string[] arrayOut, int upperBound)//Заполнение массива строками длиной от 1 по 3 символа
+        static void FillModifWordsArray(string[] arrayIn, string[] arrayOut, int upperBound)
         {
             int j = 0;
             int size = arrayIn.Length;
