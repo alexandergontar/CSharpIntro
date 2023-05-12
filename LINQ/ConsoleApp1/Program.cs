@@ -61,6 +61,7 @@ namespace WMI
                 // Display the remote computer information
                 Console.WriteLine("Computer Name : {0}",
                     m["csname"]);
+              string compName = String.Format("Computer Name : {0}", m["csname"]);
                 Console.WriteLine("Windows Directory : {0}",
                     m["WindowsDirectory"]);
                 Console.WriteLine("Operating System: {0}",
