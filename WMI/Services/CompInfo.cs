@@ -8,7 +8,7 @@ namespace WMI.Services
     public class CompInfo
     {
 
-        public void GetInfo() 
+        public PC GetInfo() 
         {
             //ConnectionOptions connection = new ConnectionOptions();
             //connection.Username = "cstgontaa";
@@ -21,7 +21,8 @@ namespace WMI.Services
             // This example uses the default values.
             List<Disk> disks = new List<Disk>();
             List<string> commonInfo = new List<string>();
-            string compInfo ="";
+            string compInfo =String.Empty;
+            PC pc = new PC();
             try
             {
                 ConnectionOptions options =
@@ -101,7 +102,11 @@ namespace WMI.Services
                     compInfo += item;
                 }
                 Console.Write(compInfo);
+                pc.Disks = disks;
+                pc.PcInfo = compInfo;
+                pc.PcItems = commonInfo;
                 Console.ReadKey();
+                return pc;
             }
             catch (Exception ex)
             {
@@ -117,7 +122,11 @@ namespace WMI.Services
                     compInfo += item;
                 }
                 Console.Write(compInfo);
+                pc.Disks = disks;
+                pc.PcInfo = compInfo;
+                pc.PcItems = commonInfo;
                 Console.ReadKey();
+                return pc;
             }
         }
 
