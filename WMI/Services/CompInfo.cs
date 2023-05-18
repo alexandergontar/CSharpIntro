@@ -5,7 +5,7 @@ using WMI.Model;
 
 namespace WMI.Services
 {
-    public class CompInfo   {
+    public class CompInfo  : IPcmanager {
        
         public PC GetInfo() 
         {            
