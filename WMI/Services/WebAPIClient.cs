@@ -17,7 +17,7 @@ namespace WMI.Services
         {
             StringContent data = new StringContent(jsonString, Encoding.UTF8, "application/json");
             string url = "https://httpbin.org/post";
-            using var client = new HttpClient();
+            using HttpClient client = new HttpClient();
             var response = await client.PostAsync(url, data);
             string result = await response.Content.ReadAsStringAsync();            
             return result;

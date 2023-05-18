@@ -36,30 +36,20 @@ namespace WMI.Services
 
                 ManagementObjectCollection queryCollection = searcher.Get();
                 foreach (ManagementObject m in queryCollection)
-                {
-                    // Display the remote computer information
-                    //Console.WriteLine("Computer Name : {0}", m["csname"]);                   
-                    commonInfo.Add(String.Format("Computer Name : {0}\n", m["csname"]));
-                   // Console.WriteLine("Windows Directory : {0}", m["WindowsDirectory"]);
-                    commonInfo.Add(String.Format("Windows Directory : {0}\n", m["WindowsDirectory"]));
-                   // Console.WriteLine("Operating System: {0}", m["Caption"]);
-                    commonInfo.Add(String.Format("Operating System: {0}\n", m["Caption"]));
-                   // Console.WriteLine("Version: {0}", m["Version"]);
-                    commonInfo.Add(String.Format("Version: {0}\n", m["Version"]));
-                   // Console.WriteLine("Manufacturer : {0}", m["Manufacturer"]);
+                {                          
+                    commonInfo.Add(String.Format("Computer Name : {0}\n", m["csname"]));                   
+                    commonInfo.Add(String.Format("Windows Directory : {0}\n", m["WindowsDirectory"]));                  
+                    commonInfo.Add(String.Format("Operating System: {0}\n", m["Caption"]));                   
+                    commonInfo.Add(String.Format("Version: {0}\n", m["Version"]));                   
                     commonInfo.Add(String.Format("Manufacturer : {0}\n", m["Manufacturer"]));
                 } 
-
                 query = new ObjectQuery("SELECT * FROM Win32_LogicalDisk");
                 searcher = new ManagementObjectSearcher(scope, query);
                 foreach (ManagementObject managementObject in searcher.Get())
                 {
-                    Disk disk = new Disk();
-                    //Console.WriteLine("Drive Name :" + managementObject["Name"].ToString());
-                    disk.DiskName = managementObject["Name"].ToString();
-                   // Console.WriteLine("Volume Size :" + managementObject["Size"].ToString());
-                    disk.VolumeSize = (UInt64)managementObject["Size"];
-                   // Console.WriteLine("Free Space :" + managementObject["FreeSpace"].ToString());
+                    Disk disk = new Disk();                    
+                    disk.DiskName = managementObject["Name"].ToString();                   
+                    disk.VolumeSize = (UInt64)managementObject["Size"];                  
                     disk.FreeSpace = (UInt64)managementObject["FreeSpace"];
                     disks.Add(disk);
                 }
@@ -68,15 +58,13 @@ namespace WMI.Services
                     Console.WriteLine($"{d.DiskName}  {d.VolumeSize}  {d.FreeSpace}");
                 }
                 foreach (string item in commonInfo)
-                {
-                   // Console.WriteLine(item);
+                {                   
                     compInfo += item;
                 }
                 Console.Write(compInfo);
                 pc.Disks = disks;
                 pc.PcInfo = compInfo;
-                pc.PcItems = commonInfo;
-                //Console.ReadKey();
+                pc.PcItems = commonInfo;                
                 return pc;
             }
             catch (Exception ex)
@@ -88,15 +76,13 @@ namespace WMI.Services
                     Console.WriteLine($"{d.DiskName}  {d.VolumeSize}  {d.FreeSpace}");
                 }
                 foreach (string item in commonInfo)
-                {
-                    //Console.WriteLine(item);
+                {                    
                     compInfo += item;
                 }
                 Console.Write(compInfo);
                 pc.Disks = disks;
                 pc.PcInfo = compInfo;
-                pc.PcItems = commonInfo;
-                //Console.ReadKey();
+                pc.PcItems = commonInfo;                
                 return pc;
             }
         }

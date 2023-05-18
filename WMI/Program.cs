@@ -13,23 +13,13 @@ namespace WMI
 {
     class Program
     {
-      /*  static async Task<string> sendPost(string output)
-        {
-            var data = new StringContent(output, Encoding.UTF8, "application/json");
-            var url = "https://httpbin.org/post";
-            using var client = new HttpClient();
-
-            var response = await client.PostAsync(url, data);
-
-            var result = await response.Content.ReadAsStringAsync();
-            // Console.WriteLine(result);
-            return result;
-        }*/
+      
         static void Main(string[] args)
         {
             IPcmanager info = new CompInfo();
             PC pc = info.GetInfo();
             string output = JsonConvert.SerializeObject(pc);
+            // Test Deserialization
             /*PC pc1 = JsonConvert.DeserializeObject<PC>(output);
             foreach (Disk disk in pc1.Disks)
             {
@@ -39,8 +29,7 @@ namespace WMI
             Console.WriteLine("\n ===== JSON Format ===== :");
             Console.WriteLine(output);
 
-            IClient client = new WebAPIClient();
-            //Task<string> result = sendPost(output);
+            IClient client = new WebAPIClient();            
             Task<string> result = client.sendPost(output);
             result.Wait();
             Console.WriteLine(result.Result.ToString());
