@@ -13,10 +13,10 @@ namespace WMI.Services
 {
     public class WebAPIClient : IClient
     {
-        public async Task<string> sendPost(string jsonString)
+        public async Task<string> sendPost(string jsonString, string url)
         {
             StringContent data = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            string url = "https://httpbin.org/post";
+            //url = "https://httpbin.org/post";
             using HttpClient client = new HttpClient();
             var response = await client.PostAsync(url, data);
             string result = await response.Content.ReadAsStringAsync();            

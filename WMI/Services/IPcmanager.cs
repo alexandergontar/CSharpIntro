@@ -9,6 +9,6 @@ namespace WMI.Services
 {
     public interface IPcmanager
     {
-        public PC GetInfo();
+        public PC GetInfo(string host);
     }
 }

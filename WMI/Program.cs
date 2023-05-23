@@ -15,25 +15,10 @@ namespace WMI
     {
       
         static void Main(string[] args)
-        {
-            IPcmanager info = new CompInfo();
-            PC pc = info.GetInfo();
-            string output = JsonConvert.SerializeObject(pc);
-            // Test Deserialization
-            /*PC pc1 = JsonConvert.DeserializeObject<PC>(output);
-            foreach (Disk disk in pc1.Disks)
-            {
-                Console.WriteLine("{0}   {1}   {2}",
-                    disk.DiskName, disk.VolumeSize, disk.FreeSpace);
-            }*/
-            Console.WriteLine("\n ===== JSON Format ===== :");
-            Console.WriteLine(output);
-
-            IClient client = new WebAPIClient();            
-            Task<string> result = client.sendPost(output);
-            result.Wait();
-            Console.WriteLine(result.Result.ToString());
-            Console.ReadKey();
+        {            
+            new BL(new WebAPIClient(),
+                     new CompInfo())
+                      .Run();
         }
     }
 }

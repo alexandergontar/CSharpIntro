@@ -7,7 +7,7 @@ namespace WMI.Services
 {
     public class CompInfo  : IPcmanager {
        
-        public PC GetInfo() 
+        public PC GetInfo(string host) 
         {            
             List<Disk> disks = new List<Disk>();
             List<string> commonInfo = new List<string>();
@@ -25,7 +25,7 @@ namespace WMI.Services
                 options.Password = "N@talie-1917";*/
                 
                 ManagementScope scope = new ManagementScope(
-                    "\\\\localhost\\root\\cimv2", options);
+                    "\\\\"+host+"\\root\\cimv2", options);
                 scope.Connect();
 
                 //Query system for Operating System information
