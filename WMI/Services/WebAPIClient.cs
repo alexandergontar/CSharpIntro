@@ -1,11 +1,4 @@
-﻿using System;
-using System.Management;
-using System.Collections.Generic;
-using WMI.Model;
-using WMI.Services;
-using Newtonsoft.Json;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,8 +8,7 @@ namespace WMI.Services
     {
         public async Task<string> sendPost(string jsonString, string url)
         {
-            StringContent data = new StringContent(jsonString, Encoding.UTF8, "application/json");
-            //url = "https://httpbin.org/post";
+            StringContent data = new StringContent(jsonString, Encoding.UTF8, "application/json");            
             using HttpClient client = new HttpClient();
             var response = await client.PostAsync(url, data);
             string result = await response.Content.ReadAsStringAsync();            
