@@ -11,6 +11,8 @@ namespace GBtest1
         public string Name { get; set; }
         public int Age { get; set; }
 
+        public void doCommand() { }
+
         public Animal(string name, int age) 
         {
             Name = name;
