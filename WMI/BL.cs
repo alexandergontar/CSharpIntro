@@ -6,6 +6,7 @@ using System;
 
 namespace WMI
 {
+
     public class BL
     {
         private IClient client;
