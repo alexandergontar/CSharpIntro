@@ -15,7 +15,25 @@ namespace GBtest1
             4 - добавить лошадь
             5 - добавить осла
             6 - добавить верблюда
+            10 - вывести список
             0 - выход"); 
+        }
+
+        static void displayAnimals(List<Animal> animals) 
+        {
+            if (animals.Count == 0 || animals == null)
+            {
+                Console.WriteLine("Список животных пуст.\n");
+                return;
+            }
+            int n = 1;
+            foreach (Animal animal in animals)
+            {
+                Console.WriteLine($"{n}. Кличка: {animal.Name} Возраст: {animal.Age}" +
+                    $" Животное: {animal.GetType().Name} Тип: {animal.GetType().BaseType.Name}");
+                n++;
+            }
+            Console.WriteLine();
         }
         static void Main(string[] args)
         {
@@ -28,12 +46,17 @@ namespace GBtest1
                 {
                     int action = int.Parse(Console.ReadLine());
                     if (action == 0) break;
+                    if (action == 10)
+                    {
+                        displayAnimals(animals);
+                        continue;
+                    }
                     Console.WriteLine("Введите кличку животного:");
                     string name = Console.ReadLine();
                     Console.WriteLine("Введите возраст животного:");
                     int age = int.Parse(Console.ReadLine());
                     switch (action)
-                    {
+                    {                        
                         case 1: Animal dog = new Dog(name, age);
                             animals.Add(dog);
                             break;
@@ -57,29 +80,20 @@ namespace GBtest1
                             Animal camel = new Camel(name, age);
                             animals.Add(camel);
                             break;
+                        
                         default:
                             break;
                     }
-                    Console.WriteLine("Число животных: " + counter.getCount());
-                    foreach (Animal animal in animals)
-                    {
-                        Console.WriteLine($"{animal.Name} {animal.Age}" +
-                            $" {animal.GetType().Name} {animal.GetType().BaseType.Name}");
-                        
-                    }
+                    Console.WriteLine("Число животных: " + counter.getCount()+"\n");
+                                      
                 }
                 catch (Exception ex)
                 {
                     ex.ToString();
                     Console.WriteLine("Неверный ввод");
                     continue;
-                }
-                Console.ReadKey();
-            }
-            //Console.WriteLine(counter.getCount());
-            //Animal dog = new Dog("tobik", 3);
-            //Console.WriteLine("Число животных"+counter.getCount());
-           // Console.ReadKey();
+                }                
+            }            
         }
     }
 }
