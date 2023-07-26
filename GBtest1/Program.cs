@@ -21,6 +21,17 @@ namespace GBtest1
 
         static void displayAnimals(List<Animal> animals) 
         {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("Cat", "Кошка");
+            dict.Add("Dog", "Собака");
+            dict.Add("Camel", "Верблюд");
+            dict.Add("Horse", "Лошадь");
+            dict.Add("Donkey", "Осел");
+            dict.Add("Hamster", "Хомяк");
+            dict.Add("PackAnimal", "Вьючное");
+            dict.Add("PetAnimal", "Домашнее");
+            
+
             if (animals.Count == 0 || animals == null)
             {
                 Console.WriteLine("Список животных пуст.\n");
@@ -30,7 +41,7 @@ namespace GBtest1
             foreach (Animal animal in animals)
             {
                 Console.WriteLine($"{n}. Кличка: {animal.Name} Возраст: {animal.Age}" +
-                    $" Животное: {animal.GetType().Name} Тип: {animal.GetType().BaseType.Name}");
+                    $" Животное: {dict[animal.GetType().Name]} Тип: {dict[animal.GetType().BaseType.Name]}");
                 n++;
             }
             Console.WriteLine();
@@ -39,6 +50,7 @@ namespace GBtest1
         {
             List<Animal> animals = new List<Animal>();
             Counter counter = new Counter();
+            
             while (true)
             {
                 promptMessage();
