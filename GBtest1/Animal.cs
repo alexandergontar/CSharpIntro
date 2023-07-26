@@ -17,6 +17,8 @@ namespace GBtest1
         {
             Name = name;
             Age = age;
+            Counter counter = new Counter();
+            counter.add();
         }
         
     }
